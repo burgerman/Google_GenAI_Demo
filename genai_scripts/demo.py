@@ -1,6 +1,7 @@
 from google import genai
 from google.genai import types
 
+
 API_KEY = "api key"   # replace with your API key
 
 client = genai.Client(api_key=API_KEY)
