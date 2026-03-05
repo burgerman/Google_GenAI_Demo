@@ -1,10 +1,12 @@
+import os
 from google import genai
 from google.genai import types
+from dotenv import load_dotenv
 
+load_dotenv()
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 
-API_KEY = "api key"   # replace with your API key
-
-client = genai.Client(api_key=API_KEY)
+client = genai.Client(api_key=GEMINI_API_KEY)
 
 ROLE_DEFINITION = """You are an AI agent specialized in analyzing customer purchase. You need to review a user's recent purchase history, their written reviews of specific products, and the number of likes their reviews receive from other customers. Based on this data, identify which products the user most recommends and that are also well-received by other customers. A recommended product is one that the user has rated highly, indicating strong endorsement."""
 SHOPPING_ANALYST_PROMPT = """
